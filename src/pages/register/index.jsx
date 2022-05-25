@@ -1,21 +1,16 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from '../../firebaseconfig';
 
 function Register() {
-
+    let navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password1, setPassword1] = useState("");
     const [password2, setPassword2] = useState("");
     const [passwordMessage, setPasswordMessage] = useState("");
 
-    // const [user, setUser] = useState({});
-
-    // onAuthStateChanged(auth, (currentUser) => {
-    //     setUser(currentUser);
-    // })
 
     function validatePassword() {
         var isValid = false;
@@ -31,6 +26,8 @@ function Register() {
             if (validatePassword()) {
                 const user = await createUserWithEmailAndPassword(auth, email, password1);
                 console.log("termino de registrar: ", user);
+                logout();
+                navigate('/login');
             } else {
                 setPasswordMessage("Password does not coincide");
             }
@@ -42,8 +39,6 @@ function Register() {
     const logout = async () => {
         await signOut(auth);
     }
-
-    let navigate = useNavigate();
 
     return <form>
         <div className="form-Inner">

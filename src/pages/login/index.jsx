@@ -6,24 +6,21 @@ import { auth } from '../../firebaseconfig';
 
 function Login() {
 
+  let navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [notRegisteredMessage, setNotRegisteredMessage] = useState("");
 
   const login = async (e) => {
     try {
       const user = await signInWithEmailAndPassword(auth, email, password);
       console.log(user.email);
-      e.preventDefault();
+      navigate('/main-page')
     } catch (error) {
       console.log(error.message);
+      setNotRegisteredMessage("User not found or invalid password");
     }
   }
-
-  function consoleDebug(e) {
-    console.log("Hello");
-  }
-
-  let navigate = useNavigate();
 
   return <form>
     <div className="form-Inner">
@@ -44,7 +41,7 @@ function Login() {
         <button type='button' onClick={login}>Submit</button>
       </div>
       <h4>
-        {auth?.currentUser?.email ?? "No estoy Logeado"}
+        {notRegisteredMessage}
       </h4>
     </div>
   </form>
