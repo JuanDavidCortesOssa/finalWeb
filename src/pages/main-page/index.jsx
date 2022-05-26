@@ -6,9 +6,15 @@ import './style.css';
 import { useNavigate } from "react-router-dom";
 import { auth } from '../../firebaseconfig';
 import { signOut } from "firebase/auth";
+import { useSelector, useDispatch } from 'react-redux';
+import { setFalse } from '../../userSlice';
 
 export default function MainMenu() {
     let navigate = useNavigate();
+
+    const isLogged = useSelector((state) => state.isLogged.value);
+    const dispatch = useDispatch();
+
     const cityRef = useRef(null);
     const [loading, setLoading] = useState(false);
     const [cityCode, setCityCode] = useState("297475");
@@ -38,6 +44,7 @@ export default function MainMenu() {
 
     function returnToLogin() {
         logout();
+        dispatch(setFalse());
         window.localStorage.clear();
         navigate(-1);
     }

@@ -4,18 +4,21 @@ import { useNavigate, } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../firebaseconfig';
 import './style.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { setTrue } from '../../userSlice';
 
 function Login() {
-
   let navigate = useNavigate();
+
+  const isLogged = useSelector((state) => state.isLogged.value);
+  const dispatch = useDispatch();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLogged, setIsLogged] = useState(false);
   const [notRegisteredMessage, setNotRegisteredMessage] = useState("");
 
   const setLocalStorage = value => {
     try {
-      setIsLogged(value);
       window.localStorage.setItem("Logged", value);
     } catch (e) {
       console.log(e);
@@ -26,6 +29,7 @@ function Login() {
     try {
       const user = await signInWithEmailAndPassword(auth, email, password);
       console.log(user.email);
+      dispatch(setTrue());
       setLocalStorage(true);
       navigate('/main-page')
     } catch (error) {
