@@ -3,6 +3,16 @@
     padding: 0cm;
 }
 
+#login-page {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+}
+
 #form-inner {
     height: 70vh;
     width: 40vw;
@@ -10,6 +20,7 @@
     display: flex;
     flex-flow: column;
     justify-content: center;
+    align-items: center;
 }
 
 .form-group {
@@ -19,4 +30,68 @@
     margin: 10px;
     display: flex;
     flex-flow: column;
+}
+
+/* Buttons: El diseño de estos botones se sacó de
+    una plantilla */
+
+.submit-button {
+    appearance: button;
+    background-color: #1899D6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: din-round, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 20%;
+    margin: 10px;
+}
+
+.submit-button:after {
+    background-clip: padding-box;
+    background-color: #1CB0F6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.submit-button:main,
+.submit-button:focus {
+    user-select: auto;
+}
+
+.submit-button:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+}
+
+.submit-button:disabled {
+    cursor: auto;
 }

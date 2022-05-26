@@ -23,29 +23,29 @@ function Login() {
     }
   }
 
-  return <form>
-    <div id="form-inner">
-      <h2>LOGIN</h2>
-      <div className="form-group">
-        <label htmlFor="email">E-mail</label>
-        <input type="text" email="email" id="email"
-          onChange={(event => { setEmail(event.target.value) })}>
-        </input>
+  return <div id='login-page'>
+    <form>
+      <div id="form-inner">
+        <h2>LOGIN</h2>
+        <div className="form-group">
+          <label htmlFor="email">E-mail</label>
+          <input type="text" email="email" id="email"
+            onChange={(event => { setEmail(event.target.value) })}>
+          </input>
+        </div>
+        <div className="form-group">
+          <label htmlFor="password">Password</label>
+          <input type="text" password="password" id="password"
+            onChange={(event => { setPassword(event.target.value) })}>
+          </input>
+        </div>
+        <button className="submit-button" type='button' onClick={login}>Submit</button>
+        <h4>
+          {notRegisteredMessage}
+        </h4>
       </div>
-      <div className="form-group">
-        <label htmlFor="password">Password</label>
-        <input type="text" password="password" id="password"
-          onChange={(event => { setPassword(event.target.value) })}>
-        </input>
-      </div>
-      <div className="submit-button">
-        <button type='button' onClick={login}>Submit</button>
-      </div>
-      <h4>
-        {notRegisteredMessage}
-      </h4>
-    </div>
-  </form>
+    </form>
+  </div>
 }
 
 export default Login;
