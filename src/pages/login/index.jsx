@@ -40,9 +40,7 @@ function Login() {
           </input>
         </div>
         <button className="submit-button" type='button' onClick={login}>Submit</button>
-        <h4>
-          {notRegisteredMessage}
-        </h4>
+        {notRegisteredMessage}
       </div>
     </form>
   </div>

@@ -44,7 +44,7 @@ function Register() {
     return <div id='register-page'>
         <form>
             <div className="form-inner">
-                <h2>LOGIN</h2>
+                <h2>REGISTER</h2>
                 <div className="form-group">
                     <label htmlFor="email">E-mail</label>
                     <input type="text" email="email" id="email"
