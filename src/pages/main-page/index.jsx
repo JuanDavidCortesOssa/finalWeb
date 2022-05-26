@@ -155,14 +155,16 @@ export default function MainMenu() {
 
             </form>
             <main>
-                <section>
-                    <h1>Restaurantes</h1>
+                <section id='restaurantes'>
+                    <h1 id='text-restaurantes'>Restaurantes</h1>
                     {
                         restaurants.map((restaurant, index) => (
-                            <>
-                                <h3 id={index}>{restaurant.name}</h3>
-                                <img src={restaurant.urlImg} alt="restaurantImg" />
-                                <button onClick={() => showModal(index)}>Ver restaurante</button>
+                            < >
+                                <div className='restaurante'>
+                                    <h3 id={index}>{restaurant.name}</h3>
+                                    <img src={restaurant.urlImg} alt="restaurantImg" />
+                                    <button className='restaurant-button' onClick={() => showModal(index)}>Ver restaurante</button>
+                                </div>
                             </>
                         ))
 

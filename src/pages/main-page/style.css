@@ -26,6 +26,37 @@
     height: 5vh;
 }
 
+/* Restaurantes */
+
+#restaurantes {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 60vw;
+}
+
+#text-restaurantes {
+    margin: 20px;
+    width: 100%;
+    background-color: #1CB0F6;
+    text-align: center;
+}
+
+.restaurante {
+    width: 40%;
+    height: auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    margin: 5px;
+}
+
+.restaurant-button {
+    width: 100%;
+}
+
 /* Buttons: El diseño de estos botones se sacó de
     una plantilla */
 
