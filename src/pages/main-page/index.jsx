@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect, useRef } from "react";
 import Modal from "../../components/Modal";
 import axios from 'axios';
+import './style.css';
 
 export default function MainMenu() {
 
@@ -122,29 +123,30 @@ export default function MainMenu() {
 
     return (
         <>
-
             <form onSubmit={submitHandler}>
-                <div className="form-Inner">
+                <div className="explorer-inner">
                     <h2>Buscador de restaurantes</h2>
-                    <div className="form-group">
-                        <label htmlFor="city">Buscador</label>
-                        <input
-                            type="text"
-                            id="city"
-                            name="city"
-                            placeholder="Ciudad"
-                            ref={cityRef}
-                            required></input>
-                    </div>
-                    <div className="submit-button">
-                        {
-                            true
-                                ?
-                                <button type="submit">Submit</button>
-                                :
-                                <h1>Inicia sesión  para hacer búsquedas</h1>
+                    <div id='explorer'>
+                        <div >
+                            <input
+                                className="explorere-input"
+                                type="text"
+                                id="city"
+                                name="city"
+                                placeholder="Ciudad"
+                                ref={cityRef}
+                                required></input>
+                        </div>
+                        <div>
+                            {
+                                true
+                                    ?
+                                    <button className="search-button" type="submit">Search</button>
+                                    :
+                                    <h1>Inicia sesión  para hacer búsquedas</h1>
 
-                        }
+                            }
+                        </div>
                     </div>
                 </div>
                 {

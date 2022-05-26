@@ -1,0 +1,91 @@
+* {
+    margin: 0cm;
+    padding: 0cm;
+}
+
+.explorer-inner {
+    width: 60vw;
+    height: 15vh;
+    background-color: aqua;
+    display: flex;
+    flex-flow: column;
+}
+
+#explorer {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    background-color: azure;
+}
+
+.explorere-input {
+    width: 30vw;
+    height: 5vh;
+}
+
+/* Buttons: El diseño de estos botones se sacó de
+    una plantilla */
+
+.search-button {
+    appearance: button;
+    background-color: #1899D6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: din-round, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
+    margin: 10px;
+}
+
+.search-button:after {
+    background-clip: padding-box;
+    background-color: #1CB0F6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.search-button:main,
+.search-button:focus {
+    user-select: auto;
+}
+
+.search-button:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+}
+
+.search-button:disabled {
+    cursor: auto;
+}
