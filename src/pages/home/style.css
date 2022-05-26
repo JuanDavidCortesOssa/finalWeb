@@ -36,7 +36,9 @@
     margin-bottom: 5%;
 }
 
-/* Buttons */
+/* Buttons: El diseño de estos botones se sacó de
+    una plantilla */
+
 .home-button {
     appearance: button;
     background-color: #1899D6;
