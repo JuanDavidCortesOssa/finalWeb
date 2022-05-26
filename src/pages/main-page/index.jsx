@@ -49,15 +49,15 @@ export default function MainMenu() {
         navigate(-1);
     }
 
-    useEffect(() => {
+    // useEffect(() => {
 
-    }, [restaurants])
+    // }, [restaurants])
 
     const submitHandler = (e) => {
-        // prevent the form from submitting
+
         e.preventDefault();
         setLoading(true);
-        // obtiene con el hook the useRef el valor del input
+
         const city = cityRef.current.value;
 
         //searchRestaurant();
