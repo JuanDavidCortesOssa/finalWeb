@@ -38,7 +38,8 @@ export default function MainMenu() {
 
     function returnToLogin() {
         logout();
-        navigate('/login');
+        window.localStorage.clear();
+        navigate(-1);
     }
 
     useEffect(() => {
@@ -157,7 +158,7 @@ export default function MainMenu() {
                         </div>
                         <div>
                             {
-                                true
+                                window.localStorage.getItem("Logged")
                                     ?
                                     <button className="search-button" type="submit">Search</button>
                                     :

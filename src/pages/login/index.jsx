@@ -10,12 +10,23 @@ function Login() {
   let navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLogged, setIsLogged] = useState(false);
   const [notRegisteredMessage, setNotRegisteredMessage] = useState("");
+
+  const setLocalStorage = value => {
+    try {
+      setIsLogged(value);
+      window.localStorage.setItem("Logged", value);
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
   const login = async (e) => {
     try {
       const user = await signInWithEmailAndPassword(auth, email, password);
       console.log(user.email);
+      setLocalStorage(true);
       navigate('/main-page')
     } catch (error) {
       console.log(error.message);
