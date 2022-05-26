@@ -10,13 +10,18 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    background-color: pink;
+    background-color: azure;
+}
+
+#login-text {
+    color: white;
+    margin-bottom: 20px;
 }
 
 #form-inner {
     height: 70vh;
-    width: 40vw;
-    background-color: aqua;
+    width: 30vw;
+    background-color: #0550B1;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -26,10 +31,13 @@
 .form-group {
     height: 10%;
     width: 80%;
-    background-color: aliceblue;
-    margin: 10px;
+    /* background-color: aliceblue; */
     display: flex;
     flex-flow: column;
+}
+
+.form-input {
+    height: 70%;
 }
 
 /* Buttons: El diseño de estos botones se sacó de

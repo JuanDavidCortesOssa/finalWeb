@@ -3,9 +3,12 @@ import { useState, useEffect, useRef } from "react";
 import Modal from "../../components/Modal";
 import axios from 'axios';
 import './style.css';
+import { useNavigate } from "react-router-dom";
+import { auth } from '../../firebaseconfig';
+import { signOut } from "firebase/auth";
 
 export default function MainMenu() {
-
+    let navigate = useNavigate();
     const cityRef = useRef(null);
     const [loading, setLoading] = useState(false);
     const [cityCode, setCityCode] = useState("297475");
@@ -28,6 +31,15 @@ export default function MainMenu() {
     const [restauranteImg, setRestauranteImg] = useState("https://media-cdn.tripadvisor.com/media/photo-l/21/a2/be/db/giardino.jpg");
     const [restauranteDescription, setRestauranteDescription] = useState("Text");
     const [restauranteAddress, setRestauranteAddress] = useState("Text");
+
+    const logout = async () => {
+        await signOut(auth);
+    }
+
+    function returnToLogin() {
+        logout();
+        navigate('/login');
+    }
 
     useEffect(() => {
 
@@ -125,7 +137,13 @@ export default function MainMenu() {
         <>
             <form onSubmit={submitHandler}>
                 <div className="explorer-inner">
-                    <h2>Buscador de restaurantes</h2>
+                    <div id='main-page-header'>
+                        <h2 id='buscador-restaurantes'>Buscador de restaurantes</h2>
+                        <div id='main-page-user'>
+                            <p id='user-email'>{auth.currentUser.email}</p>
+                            <button id='logout-button' type='button' onClick={returnToLogin}>Log Out</button>
+                        </div>
+                    </div>
                     <div id='explorer'>
                         <div >
                             <input
@@ -156,7 +174,7 @@ export default function MainMenu() {
             </form>
             <main>
                 <section id='restaurantes'>
-                    <h1 id='text-restaurantes'>Restaurantes</h1>
+                    {/* <h1 id='text-restaurantes'>Restaurantes</h1> */}
                     {
                         restaurants.map((restaurant, index) => (
                             < >

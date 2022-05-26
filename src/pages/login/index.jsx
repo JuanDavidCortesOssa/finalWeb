@@ -25,17 +25,15 @@ function Login() {
 
   return <div id='login-page'>
     <form>
-      <div id="form-inner">
-        <h2>LOGIN</h2>
+      <div className="form-inner">
+        <h2 id='login-text'>LOGIN</h2>
         <div className="form-group">
-          <label htmlFor="email">E-mail</label>
-          <input type="text" email="email" id="email"
+          <input className='form-input' placeholder="E-mail" type="text" email="email" id="email"
             onChange={(event => { setEmail(event.target.value) })}>
           </input>
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input type="text" password="password" id="password"
+          <input className='form-input' placeholder="password" type="text" password="password" id="password"
             onChange={(event => { setPassword(event.target.value) })}>
           </input>
         </div>

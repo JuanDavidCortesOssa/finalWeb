@@ -3,10 +3,36 @@
     padding: 0cm;
 }
 
+#main-page-header {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+#main-page-user {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+#logout-button {
+    margin: 10px;
+}
+
+#buscador-restaurantes {
+    margin: 10px;
+    color: white;
+}
+
+#user-email {
+    margin: 10px;
+    color: white;
+}
+
 .explorer-inner {
     width: 60vw;
     height: 15vh;
-    background-color: aqua;
+    background-color: #0550B1;
     display: flex;
     flex-flow: column;
 }
@@ -33,13 +59,14 @@
     flex-flow: column;
     align-items: center;
     width: 60vw;
+    background-color: azure;
 }
 
 #text-restaurantes {
     margin: 20px;
     width: 100%;
-    background-color: #1CB0F6;
-    text-align: center;
+    /* background-color: #1CB0F6; */
+    /* text-align: center; */
 }
 
 .restaurante {
@@ -49,7 +76,7 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
+    background-color: #21C3EA;
     margin: 5px;
 }
 
@@ -62,7 +89,7 @@
 
 .search-button {
     appearance: button;
-    background-color: #1899D6;
+    background-color: #21C3EA;
     border: solid transparent;
     border-radius: 16px;
     border-width: 0 0 4px;

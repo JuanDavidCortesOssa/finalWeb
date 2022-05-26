@@ -43,23 +43,20 @@ function Register() {
 
     return <div id='register-page'>
         <form>
-            <div className="form-inner">
-                <h2>REGISTER</h2>
+            <div className='form-inner'>
+                <h2 id='register-text'>REGISTER</h2>
                 <div className="form-group">
-                    <label htmlFor="email">E-mail</label>
-                    <input type="text" email="email" id="email"
+                    <input className='form-input' placeholder="E-Mail" type="text" email="email" id="email"
                         onChange={(event => { setEmail(event.target.value) })}>
                     </input>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input type="text" password="password" id="password"
+                    <input className='form-input' placeholder="password" type="text" password="password" id="password"
                         onChange={(event => { setPassword1(event.target.value) })}>
                     </input>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="password2">Password</label>
-                    <input type="text" password="password2" id="password2"
+                    <input className='form-input' placeholder="confirm password" type="text" password="password2" id="password2"
                         onChange={(event => { setPassword2(event.target.value) })}>
                     </input>
                 </div>

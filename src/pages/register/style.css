@@ -10,26 +10,22 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    background-color: pink;
+    background-color: azure;
 }
 
 .form-inner {
     height: 70vh;
-    width: 40vw;
-    background-color: aqua;
+    width: 30vw;
+    background-color: #0550B1;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
 }
 
-.form-group {
-    height: 10%;
-    width: 80%;
-    background-color: aliceblue;
-    margin: 10px;
-    display: flex;
-    flex-flow: column;
+#register-text {
+    color: white;
+    margin-bottom: 20px;
 }
 
 /* Buttons: El diseño de estos botones se sacó de
