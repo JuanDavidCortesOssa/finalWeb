@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from '../../firebaseconfig';
+import './style.css';
 
 function Register() {
     let navigate = useNavigate();
@@ -40,35 +41,34 @@ function Register() {
         await signOut(auth);
     }
 
-    return <form>
-        <div className="form-Inner">
-            <h2>LOGIN</h2>
-            <div className="form-group">
-                <label htmlFor="email">E-mail</label>
-                <input type="text" email="email" id="email"
-                    onChange={(event => { setEmail(event.target.value) })}>
-                </input>
-            </div>
-            <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input type="text" password="password" id="password"
-                    onChange={(event => { setPassword1(event.target.value) })}>
-                </input>
-            </div>
-            <div className="form-group">
-                <label htmlFor="password2">Password</label>
-                <input type="text" password="password2" id="password2"
-                    onChange={(event => { setPassword2(event.target.value) })}>
-                </input>
-            </div>
-            <div className="submit-button">
-                <button type='button' onClick={register}>Submit</button>
-            </div>
-            <h4>User Logged in: </h4>
-            {passwordMessage}
+    return <div id='register-page'>
+        <form>
+            <div className="form-inner">
+                <h2>LOGIN</h2>
+                <div className="form-group">
+                    <label htmlFor="email">E-mail</label>
+                    <input type="text" email="email" id="email"
+                        onChange={(event => { setEmail(event.target.value) })}>
+                    </input>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="password">Password</label>
+                    <input type="text" password="password" id="password"
+                        onChange={(event => { setPassword1(event.target.value) })}>
+                    </input>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="password2">Password</label>
+                    <input type="text" password="password2" id="password2"
+                        onChange={(event => { setPassword2(event.target.value) })}>
+                    </input>
+                </div>
+                <button className="submit-button" type='button' onClick={register}>Submit</button>
+                {passwordMessage}
 
-        </div>
-    </form>
+            </div>
+        </form>
+    </div>
 }
 
 export default Register;
