@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate, } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../firebaseconfig';
+import './style.css';
 
 function Login() {
 
@@ -23,7 +24,7 @@ function Login() {
   }
 
   return <form>
-    <div className="form-Inner">
+    <div id="form-inner">
       <h2>LOGIN</h2>
       <div className="form-group">
         <label htmlFor="email">E-mail</label>
